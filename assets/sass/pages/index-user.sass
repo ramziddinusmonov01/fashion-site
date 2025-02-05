@@ -1,0 +1,134 @@
+.headr-btn
+    button
+        width: 159px
+        height: 48px
+        border-radius: 5px
+        background: #000
+        color: #fff
+        transition: 0.3s linear
+        border: 1px solid #000
+        &:hover
+            background: #fff
+            color: #000
+.collection
+    padding: 70px 0
+
+.collection-title
+    @include font(700, 48px, 52px, #000)
+    margin-bottom: 92px
+
+.collection-cards
+    @include flex(row, center, center)
+    gap: 30px
+    &__item
+        @include flex(column, center, flex-start)
+        gap: 21px
+
+.collection-item
+
+    &__img
+        display: flex
+        width: 100%
+        max-width: 350px
+        height: 478px
+        object-fit: contain
+    &__name
+        @include font(400, 18px, 18px, #111)
+    &__price
+        @include font(600, 20px, 20px, #111)
+
+.collection-btn
+    width: 242px
+    height: 48px
+    @include flex(row, center, center)
+    @include font(400, 17px, 25px, #fff)
+    margin: 0 auto
+    margin-top: 69px
+    background: #000
+    border-radius: 5px
+    position: relative
+    overflow: hidden
+    transition: 0.3s linear
+    border: 1px solid #000
+    &:hover
+        color: #000
+        background: #fff
+
+// SKIDKA SECTION DESIGN
+
+.skidka
+    padding: 388px 0 125px 0
+    background: url('~/assets/images/png/user-index-skidka-bg.png')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: right top 30px
+
+.skidka-info
+    width: 100%
+    max-width: 600px
+
+    &__title
+        @include font(700, 90px, 110px, #131313)
+        margin-bottom: 30px
+        font-family: var(--second-font)
+    &__desc
+        @include font(400, 25px, 37px, #000)
+        margin-bottom: 50px
+    &__link
+        width: 159px
+        height: 49px
+        background: #000
+        border-radius: 5px
+        @include flex(row, center, center)
+        gap: 14px
+        @include font(400, 17px, 25px, #fff)
+        transition: 0.3s linear
+        &:hover
+            img
+                transform: translateX(10px)
+
+.cards
+    position: relative
+    padding: 167px 0
+    background: url('~/assets/images/png/personal-style-bg.jpg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 100%
+    padding: 112px 0
+    transition: background-size 0.2s linear
+    &:hover
+        background-size: 120%
+
+
+.cards-list
+    display: grid
+    grid-template-columns: repeat(3, 417px)
+    gap: 24px
+
+    &__item
+        background: #F6F6F6
+
+    &__item--one
+        grid-row: 1/3
+        padding: 76px 12px 49px 12px
+
+    &__item--title
+        @include font(500, 28px, 30px, #111)
+        font-family: var(--second-font)
+        margin-top: 50px
+
+    &__item--text
+        @include font(400, 18px, 19px, #939393)
+        font-family: var(--second-font)
+        margin-top: 14px
+    &__item--two
+        padding: 0 24px 24px 24px
+    &__item--three
+        padding: 0 24px 24px 24px
+    &__item--four
+        grid-column: 2/4
+        display: flex
+        flex-direction: row-reverse
+        align-items: center
+        gap: 36px
+        padding: 0 24px

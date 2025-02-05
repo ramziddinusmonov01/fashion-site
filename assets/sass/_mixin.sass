@@ -1,0 +1,279 @@
+////// FONT /////////////////////////////////////////////////////////////////
+@mixin font($fw: 400, $fz: 16px, $lh: normal, $color: $headline)
+  font-weight: $fw
+  font-size: $fz
+  line-height: $lh
+  color: $color
+
+////// FLEX /////////////////////////////////////////////////////////////////
+@mixin flex($direction: row, $justify: flex-start, $align: stretch)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+////// MAIN BUTTON /////////////////////////////////////////////////////////////////
+@mixin main-btn($max-width)
+  @include flex(row, center, center)
+  @include font(500, 17px, 25.5px)
+  color: #fff
+  background-color: $primary
+  width: 100%
+  max-width: $max-width
+  padding: 15px 35px
+  border-radius: 5px
+  transition: background-color .5s cubic-bezier(0.49,-0.11, 0.59, 1.07)
+  overflow: hidden
+  position: relative
+
+  &:before
+    background-color: #fff
+    border-radius: 50%
+    content: ""
+    height: 15px
+    left: 50%
+    opacity: .8
+    position: absolute
+    top: 50%
+    transform: translate(-50%, -50%) scale(0)
+    transition: all 0.5s ease-in-out
+    width: 15px
+
+  &:hover:before
+    opacity: 0
+    transform: translate(-50%, -50%) scale(20)
+
+////// FIT IMAGE /////////////////////////////////////////////////////////////////
+@mixin fit($fit)
+  width: 100%
+  height: 100%
+  object-fit: $fit
+
+////// MODALS /////////////////////////////////////////////////////////////////
+@mixin modal-main($maxW: 487px)
+  background-color: $white
+  border-radius: 18px
+  position: relative
+  padding: 24px
+  width: $maxW
+  overflow: auto
+
+////// BREAKPOINTS /////////////////////////////////////////////////////////////////
+$breakpoints: small 576px, medium 768px, large 992px, x-large 1200px
+
+////// MEDIA WITH BREAKPOINTS NAME /////////////////////////////////////////////////////////////////
+@mixin breakpoint($name)
+  @media (max-width: map-get($breakpoints, $name))
+    @content
+
+////// MEDIA WIDTH BREAKPOINTS PX /////////////////////////////////////////////////////////////////
+@mixin media($breakpoint)
+  @media (max-width: $breakpoint)
+    @content
+
+////// FONTS /////////////////////////////////////////////////////////////////
+/* Fonts font14x17xfw400 */
+@mixin font14x17xfw400
+  font-size: 14px
+  line-height: 17px
+  font-weight: 400
+
+  @include media($small)
+    font-size: 12px
+    line-height: 18px
+
+/* Fonts font14x17xfw500 */
+@mixin font14x17xfw500
+  font-size: 14px
+  line-height: 17px
+  font-weight: 500
+
+  @include media($small)
+    font-size: 12px
+    line-height: 18px
+
+// Fonts font16x24xfw3300
+@mixin font16x24xf300
+  font-size: 16px
+  line-height: 24px
+  font-weight: 300
+
+  @include media($small)
+    font-size: 14px
+    line-height: 21px
+
+// Fonts font16x24xfw400
+@mixin font16x24xfw400
+  font-size: 16px
+  line-height: 24px
+  font-weight: 400
+
+  @include media($small)
+    font-size: 14px
+    line-height: 21px
+
+// Fonts font16x24xfw500
+@mixin font16x24xfw500
+  font-size: 16px
+  line-height: 24px
+  font-weight: 500
+
+  @include media($small)
+    font-size: 14px
+    line-height: 21px
+
+// Fonts font18x27xfw300
+@mixin font18x27xfw300
+  font-size: 18px
+  line-height: 27px
+  font-weight: 300
+
+  @include media($small)
+    font-size: 16px
+    line-height: 24px
+
+// Fonts font18x27xfw400
+@mixin font18x27xfw400
+  font-size: 18px
+  line-height: 27px
+  font-weight: 400
+
+  @include media($small)
+    font-size: 16px
+    line-height: 24px
+
+// Fonts font18x27xfw500
+@mixin font18x27xfw500
+  font-size: 18px
+  line-height: 27px
+  font-weight: 500
+
+  @include media($small)
+    font-size: 16px
+    line-height: 24px
+
+// Fonts font20x30xfw400
+@mixin font20x30xfw400
+  font-size: 20px
+  line-height: 30px
+  font-weight: 400
+
+  @include media($small)
+    font-size: 18px
+    line-height: 27px
+
+// Fonts font20x30xfw500
+@mixin font20x30xfw500
+  font-size: 20px
+  line-height: 30px
+  font-weight: 500
+
+  @include media($small)
+    font-size: 18px
+    line-height: 27px
+
+// Fonts font20x30xfw600
+@mixin font20x30xfw600
+  font-size: 20px
+  line-height: 30px
+  font-weight: 600
+
+  @include media($small)
+    font-size: 18px
+    line-height: 27px
+
+// Fonts font25x32xfw500
+@mixin font25x32xfw400
+  font-size: 25px
+  line-height: 32px
+  font-weight: 400
+
+  @include media($small)
+    font-size: 21px
+    line-height: 32px
+
+// Fonts font25x38xfw500
+@mixin font25x38xfw500
+  font-size: 25px
+  line-height: 38px
+  font-weight: 500
+
+  @include media($small)
+    font-size: 21px
+    line-height: 32px
+
+// Fonts font31x39xfw500
+@mixin font31x39xfw500
+  font-size: 31px
+  line-height: 39px
+  font-weight: 500
+
+  @include media($small)
+    font-size: 22px
+    line-height: 28px
+
+// Fonts font41x50xfw500
+@mixin font41x50xfw500
+  font-size: 41px
+  line-height: 50px
+  font-weight: 500
+
+  @include media($x-large)
+    font-size: 40px
+    line-height: 48px
+
+  @include media($large)
+    font-size: 36px
+    line-height: 44px
+
+  @include media($medium)
+    font-size: 32px
+    line-height: 38px
+
+  @include media($small)
+    font-size: 28px
+    line-height: 34px
+
+// Fonts font52x60xfw500
+@mixin font52x60xfw300
+  font-size: 52px
+  line-height: 60px
+  font-weight: 300
+
+  @include media($x-large)
+    font-size: 48px
+    line-height: 58px
+
+  @include media($large)
+    font-size: 44px
+    line-height: 54px
+
+  @include media($medium)
+    font-size: 40px
+    line-height: 48px
+
+  @include media($small)
+    font-size: 36px
+    line-height: 42px
+
+// Fonts font52x60xfw500
+@mixin font52x60xfw500
+  font-size: 52px
+  line-height: 60px
+  font-weight: 500
+
+  @include media($x-large)
+    font-size: 48px
+    line-height: 58px
+
+  @include media($large)
+    font-size: 44px
+    line-height: 54px
+
+  @include media($medium)
+    font-size: 40px
+    line-height: 48px
+
+  @include media($small)
+    font-size: 36px
+    line-height: 42px

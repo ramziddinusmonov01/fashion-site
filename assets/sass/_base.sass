@@ -1,0 +1,93 @@
+
+////// ALL ELEMENTS STYLE //////////////    
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style-type: none
+  text-decoration: none
+  font-family: var(--pr-font)
+
+////// BUTTON STYLE //////////////    
+button
+  background-color: transparent
+  border: none
+  outline: none
+  cursor: pointer
+  border-radius: 5px
+
+////// HTML STYLE //////////////    
+html
+  scroll-behavior: smooth
+
+////// CONTAINER STYLE //////////////    
+.container
+  width: 100%
+  max-width: 1332px
+  margin: 0 auto
+  padding: 0 10px
+
+  @include media(x-large)
+    max-width: 992px !important
+  @include media(large)
+    max-width: 768px !important
+  @include media(medium)
+    max-width: 600px !important
+  @include media(small)
+    max-width: 500px !important
+  @include media(450px)
+    max-width: 100% !important
+
+////// BASE MODAL STYLE //////////////    
+.modal
+  transition: all 0.2s ease-in-out
+  top: 0
+  right: 0
+  position: fixed
+  height: 100vh
+  width: 100%
+  background: rgba(0, 0, 0, 0.5)
+  backdrop-filter: blur(10px)
+  z-index: 100
+  @include flex(row, center, center)
+
+  &-in
+    scrollbar-width: none
+    width: 100%
+    max-width: 450px
+    padding: 20px
+    border-radius: 20px
+    background: #fff
+    position: relative
+    overflow-y: scroll
+
+  &-cancel
+    cursor: pointer
+    position: absolute
+    right: 20px
+    top: 20px
+////// INPUT TYPE NUMBER STYLE //////////////    
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+  -moz-appearance: textfield
+
+////// SCROLLBAR STYLE /////////////////////////////////////////////////////////////////
+/* width */
+::-webkit-scrollbar
+  width: 10px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #D8E3FF
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: var(--primary)
+  border-radius: 50px
+
+.test
+  background: var(--primary)
+
+

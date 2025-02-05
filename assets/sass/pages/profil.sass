@@ -1,0 +1,217 @@
+.profil
+    padding: 80px 0
+    overflow-x: hidden
+    &-title
+        @include font(700, 31px, 41px, #121214)
+        margin-bottom: 31px
+    .row
+        @include flex(row, flex-start, flex-start)
+        gap: 75px
+        position: relative
+    &-left
+        width: 30%
+        @include media(1100px)
+            position: absolute
+            top: -50px
+            transform: translateX(-100%)
+            &.active
+                transform: translateX(0%)
+                button
+                    position: static
+        @include media(870px)
+            width: 50%
+        @include media(610px)
+            width: 70%
+        @include media(444px)
+            width: 90%
+        @include media(415px)
+            width: 100%
+
+        &__hamburger
+            display: none
+            @include media(1100px)
+                display: inline-block
+                position: absolute
+                right: -30px
+
+        &__menus
+            @include media(1100px)
+                transform: translateX(-100%)
+                background: #fff
+                opacity: 0
+                pointer-events: none
+                z-index: -1
+                &.active
+                    transform: translateX(0)
+                    opacity: 1
+                    pointer-events: visible
+                    z-index: 10
+    &-sidebar
+        padding: 24px 45px
+        border: 1px solid #E9EAEE
+        border-radius: 5px
+        @include flex(column, flex-start, flex-start)
+        gap: 21px
+        a, button
+            @include flex(row, flex-start, center)
+            gap: 21px
+            @include font(400, 15px, 42px, #303030)
+            transition: 0.3s linear
+            &:hover
+                p
+                    font-weight: bold
+                svg
+                    path
+                        fill: #000
+    &-right__title
+        @include font(700, 22px, 22px, #303030)
+        margin-bottom: 30px
+    &-right
+        width: 70%
+        @include media(1100px)
+            width: 100%
+    &-right__form
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 30px
+        @include media(670px)
+            grid-template-columns: repeat(1, 1fr)
+    &-right__item
+        @include flex(column, flex-start, flex-start)
+        gap: 8px
+        label
+            @include font(400, 15px, 22px, #707076)
+        input
+            width: 100%
+            display: flex
+            padding: 14px 20px
+            background: #F9F9F9
+            outline: none
+        &--btn
+            width: 100%
+            max-width: 242px
+            height: 48px
+            background: #000
+            border-radius: 5px
+            @include flex(row, center, center)
+            @include font(400, 20px, 22px, #fff)
+            @include media(415px)
+                margin: 0 auto
+
+// order history page
+.order
+    &-title
+        @include font(700, 31px, 41px, #121214)
+        margin-bottom: 37px
+    &-table
+        width: 100%
+        border-collapse: collapse
+        @include media(520px)
+            display: none
+        &__td
+            text-align: left
+            padding: 18px
+            border-bottom: 1px solid #ddd
+            @include font(400, 14px, 30px, #333333)
+            &:last-child
+                text-align: right
+    &-cards
+        display: none
+        gap: 30px
+        @include media(520px)
+            @include flex(column, flex-start, flex-start)
+        &__item
+            background: #F9F9F9
+            padding: 20px 22px
+            border-radius: 5px
+            @include flex(column, flex-start, flex-start)
+            gap: 25px
+            width: 1005px
+            max-width: 310px
+            h4
+                @include font(400, 17px, 17px, #000)
+            p
+                @include font(400, 14px, 14px, #707076)
+                display: flex
+                width: 100%
+                span
+                    margin-left: 12px
+                &:last-child
+                    justify-content: space-between
+                    span
+                        font-weight: bold
+                        color: #000
+
+// my orders
+
+.myOrder
+
+.profil-title
+    @include font(700, 23px, 30px, #303030)
+
+.myOrder-info
+    border: 1px solid #E9EAEE
+    border-radius: 5px
+    padding: 29px
+    @include media(500px)
+        padding: 10px
+    &__id
+        @include font(700, 17px, 30px, #121214)
+
+    &__status
+        @include flex(row, flex-start, center)
+        gap: 46px
+        margin-bottom: 34px
+        @include media(500px)
+            @include flex(column, flex-start, flex-start)
+        p
+            @include font(400, 14px, 30px, #646464)
+            strong
+                color: #141414
+        button
+            padding: 8px 13px
+            @include font(700, 14px, 21px, #111111)
+            border: 1px solid #B0B0B0
+
+.myOrder-info__table
+
+    table
+        width: 100%
+        border-collapse: collapse
+        font-size: 16px
+        color: #333
+
+        thead
+            tr
+                border-bottom: 2px solid #ddd
+
+                td
+                    font-weight: bold
+                    text-transform: uppercase
+                    padding: 10px
+
+        tbody
+            tr
+                border-bottom: 1px solid #eee
+                &:last-child
+                    border-bottom: none
+
+                td
+                    padding: 12px 10px
+                    text-align: left
+                    @include font(400, 14px,30px, #333333)
+                    @include media(500px)
+                        @include font(400, 11px,11px, #333333)
+
+                    span
+                        margin-left: 20px
+
+
+            tr:last-child
+                font-weight: bold
+                font-size: 18px
+
+
+            tr:last-child td
+                font-size: 20px
+                font-weight: bold

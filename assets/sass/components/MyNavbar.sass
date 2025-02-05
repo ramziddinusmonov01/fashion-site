@@ -1,0 +1,284 @@
+
+.nav
+    padding: 22px 0
+    border-bottom: 2px solid #000
+    position: relative
+    .container
+        @include flex(row, space-between, center)
+    
+    &-show
+        @include flex(row, space-between, center)
+        width: 90%
+        overflow: hidden
+        transition: 0.3s linear
+        opacity: 1
+        &.active
+            margin-left: -40px
+            opacity: 0
+    .hamburger
+        width: 30px
+        height: 30px
+        @include flex(column, flex-start, flex-start)
+        cursor: pointer
+        gap: 5px
+        opacity: 0
+        display: none
+        @include media(570px)
+            opacity: 1
+            display: flex
+            margin-right: 20px
+        &:hover
+            opacity: 0.7
+        span
+            width: 100%
+            border: 2px solid #000
+            border-radius: 30px
+    &__logo
+        @include font(700, 30px, 30px, #000)
+        margin-right: 24px
+        display: flex
+        @include media(570px)
+            margin-right: auto
+    &__list
+        @include flex(row, flex-start, center)
+        gap: 32px
+        margin-right: auto
+        @include media(570px)
+            display: none
+    &__list-item
+        @include font(500, 16px, 24px , #000)
+        display: flex
+
+    &__dropdown
+        position: absolute
+        bottom: 100%
+        opacity: 0
+        pointer-events: none
+        left: 0
+        transform: translateY(75%)
+        width: 100%
+        gap: 32px
+        padding: 32px 64px
+        height: auto
+        background: #fff
+        z-index: 10
+        &.active
+            bottom: -100%
+            opacity: 1
+            pointer-events: visible
+        .container
+            @include flex(row, flex-start, flex-start)
+            gap: 32px
+    &__dropdown-header
+        position: absolute
+        top: 20px
+        right: 20px
+        @include font(500, 16px, 21px, #fff)
+        button
+            width: 50px
+            @include flex(row, center, center)
+            transition: 0.2s linear
+            &:hover
+                svg
+                    path
+                        fill: #000
+            &::after,
+            &:before
+                transition: 0.2s linear !important
+            &:hover::before,
+            &:hover::after
+                width: 72%
+    &__dropdown-item
+        @include flex(column, flex-start, flex-start)
+        gap: 16px
+
+    &__dropdown-list
+        @include flex(column, flex-start, flex-start)
+        gap: 16px
+    &__dropdown-list--item
+        @include flex(row, flex-start, flex-start)
+        gap: 12px
+        padding: 5px
+        transition: 0.2s linear
+        border: 1px solid transparent
+        &:hover
+            border: 1px solid #000
+            transform: translateX(10px) scale(1.1)
+        img
+            display: flex
+            width: 24px
+            height: 24px
+            object-fit: contain
+        h2
+            @include font(600, 16px, 24px, #000)
+            &:hover
+                color: blue
+    &__dropdown-list--flex
+        @include flex(column, flex-start, flex-start)
+
+        div
+            @include flex(row, flex-start, center)
+            gap: 8px
+            @include font(500, 16px, 24px, #000)
+            p
+                @include font(400, 14px, 21px, #000)
+
+.nav-dropdown-title
+    @include font(600, 14px, 21px, #000)
+    margin-bottom: auto
+
+// button
+//     display: inline-block
+//     width: 93px
+//     height: 40px
+//     border: 1px solid #03045e
+//     position: relative
+//     overflow: hidden
+//     transition: all 0.2s ease-in
+//     z-index: 1
+//     background: #000
+
+// button::before,
+// button::after
+//     content: ''
+//     position: absolute
+//     top: 0
+//     width: 0
+//     height: 100%
+//     transform: skew(15deg)
+//     transition: all 0.5s
+//     overflow: hidden
+//     z-index: -1
+
+// button::before
+//     left: -10px
+//     background: #fff
+
+// button::after
+//     right: -10px
+//     background: #fff
+
+// button:hover::before,
+// button:hover::after
+//     width: 62%
+
+// button:hover span
+//     color: #000
+//     transition: 0.3s
+
+// button span 
+//     @include font(400, 16px, 24px, #fff)
+//     transition: all 0.3s ease-in
+
+.nav-modal
+    position: fixed
+    background: white
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100vh
+    z-index: 100
+    padding: 20px 30px
+    transition: 0.5s linear
+    &.active-modal
+        left: 0
+    &__header
+        @include flex(row, space-between, center)
+        margin-bottom: 20px
+    &__list
+        @include flex(column, flex-start, flex-start)
+        gap: 20px
+        a
+            @include flex(row, space-between, center)
+            width: 100%
+    &__dropdown
+        position: absolute
+        bottom: -10%
+        opacity: 0
+        pointer-events: none
+        left: -40px
+        width: 100%
+        gap: 32px
+        padding: 32px 64px
+        height: auto
+        background: #fff
+        z-index: 200
+        &.active
+            bottom: -10%
+            transform: translateY(-50%)
+            opacity: 1
+            pointer-events: visible
+        .container
+            @include flex(row, flex-start, flex-start)
+            gap: 32px
+    &__dropdown--header
+        position: absolute
+        top: 20px
+        right: 20px
+        @include font(500, 16px, 21px, #fff)
+        button
+            width: 50px
+            @include flex(row, center, center)
+            transition: 0.2s linear
+            &:hover
+                svg
+                    path
+                        fill: #000
+            &::after,
+            &:before
+                transition: 0.2s linear !important
+            &:hover::before,
+            &:hover::after
+                width: 72%
+
+    &__dropdown--list
+        @include flex(column, flex-start, flex-start)
+        gap: 20px
+    &__dropdown--list
+        @include flex(column, flex-start, flex-start)
+        margin-top: 20px
+    &__dropdown--list--item
+        @include flex(row, flex-start, center)
+        gap: 12px
+.nav-lang
+    max-width: 60px
+    overflow: hidden
+    margin-left: 10px
+    margin-right: 20px
+    @include flex(row, flex-start, center)
+    border: 1px solid #000
+    border-radius: 5px
+    padding: 4px
+    gap: 10px
+    cursor: pointer
+    transition: 0.3s linear
+    &.active
+        max-width: 120px
+        transition: 0.3s linear
+        &__option
+            margin-left: 10px
+    &__header
+        @include flex(row, flex-start, center)
+        gap: 5px
+        @include font(400, 16px, 24px, #000)
+    &__option
+        @include flex(row, flex-start, center)
+        gap: 10px
+        margin-left: 20px
+
+.nav-sign__icons
+    @include flex(row, flex-start, flex-end)
+    gap: 30px
+    a
+        @include flex(row, flex-start, center)
+        gap: 9px
+        
+        
+            
+
+.user-name
+    padding: 10px
+    width: 30px
+    height: 30px
+    @include font(700, 26px, 20px, #000)
+    @include flex(row, center, flex-start)

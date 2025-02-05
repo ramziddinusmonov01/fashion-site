@@ -1,0 +1,64 @@
+.footer
+    padding: 112px 0
+    background: url('~/assets/images/png/footer-bg.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    color: #fff
+
+.footer-header
+    width: 100%
+    @include flex(row, justify-between, flex-start)
+    padding-bottom: 80px
+    border-bottom: 1px solid #fff
+
+.footer-left
+    margin-right: auto
+
+    &__logo
+        display: flex
+        margin-bottom: 32px
+        @include font(700, 30px, 40px, #fff)
+    &__adress
+        @include font(600, 14px, 21px, #fff)
+        margin-bottom: 29px
+        p
+            @include font(400, 14px, 21px, #fff)
+    &__contact
+        @include flex(column, flex-start, flex-start)
+        h2
+            margin-bottom: 10px
+.footer-right
+
+    &__list
+        @include flex(column, flex-start, flex-start)
+        gap: 10px
+        a
+            position: relative
+            @include font(600, 16px, 24px, #fff)
+            svg
+                position: absolute
+                top: 50%
+                left: -50px
+                transform: translateY(-50%)
+                opacity: 0
+                pointer-events: none
+                transition: 0.3s linear
+            &:hover
+                svg
+                    opacity: 1
+                    pointer-events: auto
+                    left: -30px
+
+.footer-bottom
+    padding-top: 32px
+    @include flex(row, space-between, center)
+    &__links
+        @include flex(row, flex-start, center)
+        gap: 24px
+        a
+            @include font(400, 14px, 21px, #fff)
+            text-decoration: underline
+.footer-bootom
+    &__desc
+        @include font(400, 14px, 21px, #fff)

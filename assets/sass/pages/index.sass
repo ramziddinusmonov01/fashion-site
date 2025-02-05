@@ -1,0 +1,527 @@
+// header section design
+.header
+    padding: 112px 0
+    .container
+        @include flex(row, justify-between, center)
+        gap: 70px
+        @include media(1040px)
+            @include flex(column, center, center)
+.header-info
+    @include flex(column, flex-start, flex-start)
+    width: 50%
+    max-width: 616px
+    gap: 24px
+    @include media(1040px)
+        width: 100%
+        justify-content: center
+    &__title
+        @include font(700, 56px, 62px, #000)
+        @include media(780px)
+            @include font(700, 40px, 48px, #000)
+    &__desc
+        @include font(400, 18px, 27px, #000)
+        @include media(780px)
+            @include font(400, 16px, 24px, #000)
+    &__btns
+        @include flex(row, flex-start, center)
+        gap: 16px
+        button
+            background: white
+            &::after,
+            &::before
+                background: #000
+            &:hover
+                color: #fff
+.header-imgs
+    position: relative
+    &__bg
+        position: absolute
+        &.header-one
+            left: -40px
+            bottom: -42px
+            @include media(1390px)
+                width: 200px
+            @include media(600px)
+                display: none
+
+        &.header-two
+            right: -40px
+            top: -42px
+            @include media(1390px)
+                width: 200px
+            @include media(600px)
+                display: none
+
+    &__main
+        position: relative
+        display: flex
+        width: 100%
+        max-width: 616px
+        @include media(1390px)
+            max-width: 500px
+        @include media(1240px)
+            max-width: 400px
+        @include media(390px)
+            max-width: 360px
+.cursor
+    position: absolute
+    background-color: aqua
+    width: 7px
+    height: 7px
+    border-radius: 100%
+    z-index: 1
+    transition: 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity
+    user-select: none
+    pointer-events: none
+    transform: scale(1)
+    z-index: 10000
+    display: none
+
+    &.active
+        opacity: 0.5
+        transform: scale(0)
+        display: flex
+    &.hovered
+        opacity: 0.08
+        display: flex
+
+.cursor-follow
+    position: absolute
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    border: 1px solid #000
+    z-index: 1
+    transition: 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity
+    user-select: none
+    pointer-events: none
+    z-index: 10000
+    transform: translate(5px, 5px)
+    display: none
+    &.active
+        opacity: 0.7
+        transform: scale(3)
+        display: inline-block
+    &.hovered
+        opacity: 0.08
+        display: inline-block
+
+// HERO SECTION DESIGN 
+.hero
+    padding: 112px 0
+
+.hero-row
+    @include flex(row, justify-between, flex-start)
+    gap: 80px
+    margin-bottom: 80px
+    @include media(110px)
+        gap: 50px
+    @include media(920px)
+        @include flex(column, center, flex-start)
+        align-items: center
+        gap: 20px
+.hero-left
+    width: 50%
+    @include media(920px)
+        width: 100%
+    &__heading
+        @include font(600, 16px, 24px, #000)
+        margin-bottom: 16px
+        @include media(920px)
+            display: none
+    &__title
+        @include font(700, 48px, 57px, #000)
+        @include media(920px)
+            text-align: center
+        @include media(413px)
+            @include font(700, 36px, 43px, #000)
+            text-align: left
+.hero-right
+    width: 50%
+    @include media(920px)
+        width: 100%
+    &__desc
+        @include font(400, 18px, 27px, #000)
+        @include media(920px)
+            text-align: center
+        @include media(413px)
+            @include font(400, 16px, 24px, #000)
+            text-align: left
+.hero-list
+    display: grid
+    grid-template-columns: repeat(3, 405px)
+    gap: 48px
+    @include media(1330px)
+        grid-template-columns: repeat(3, 350px)
+        justify-content: space-between
+        gap: 20px
+    @include media(1100px)
+        grid-template-columns: repeat(3, 300px)
+        gap: 10px
+    @include media(920px)
+        display: flex
+        flex-wrap: wrap
+    @include media(664px)
+        justify-content: center
+    @include media(413px)
+        justify-content: flex-start
+
+    &__item
+        @include flex(column, flex-start, flex-start)
+        gap: 24px
+        @include media(664px)
+            @include flex(column, center, center)
+        @include media(413px)
+            @include flex(column, flex-start, flex-start)
+    &__item--img
+        display: flex
+        width: 48px
+        height: 48px
+        object-fit: contain
+    &__item--title
+        @include font(700, 32px, 41px, #000)
+    &__item--desc
+        @include font(400, 16px, 24px, #000)
+
+// PERSONAL STYLE SECTION DESIGN
+
+.personalStyle
+    background: url('~/assets/images/png/personal-style-bg.jpg')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 100%
+    padding: 112px 0
+    transition: all 0.2s linear
+    &:hover
+        background-size: 120%
+    @include media(970px)
+        background-size: cover
+        &:hover
+            background-size: cover
+
+.personalStyle-title
+    @include font(700, 40px, 42px, #fff)
+    margin-bottom: 80px
+    width: 100%
+    max-width: 768px
+    @include media(413px)
+        @include font(700, 32px, 38px, #fff)
+.personalStyle-cards
+    display: grid
+    grid-template-columns: repeat(3, 405px)
+    gap: 48px
+    @include media(1340px)
+        grid-template-columns: repeat(3, 350px)
+        gap: 30px
+        justify-content: space-between
+    @include media(1130px)
+        grid-template-columns: repeat(3, 300px)
+    @include media(970px)
+        grid-template-columns: repeat(2, 400px)
+    @include media(840px)
+        grid-template-columns: repeat(1, 1fr)
+        justify-content: center
+        gap: 20px
+    &__item
+        @include media(840px)
+            display: flex
+            flex-direction: column
+            align-items: center
+    &__item--img
+        display: flex
+        width: 100%
+        max-width: 405px
+        max-height: 240px
+        margin-bottom: 32px
+        object-fit: contain
+    &__item--title
+        @include font(700, 24px, 33px, #fff)
+        margin-bottom: 16px
+        @include media(413px)
+            @include font(700, 20px, 18px, #fff)
+    &__item--desc
+        @include font(400, 16px, 24px, #fff)
+        margin-bottom: 24px
+    &__item--link
+        @include flex(row, flex-start, center)
+        gap: 8px
+        @include font(400, 16px, 24px, #fff)
+        width: max-content
+        &:hover
+            img
+                transform: translateX(10px) rotate(-90deg)
+        img
+            display: flex
+            width: 24px
+            height: 24px
+            object-fit: contain
+            transform: rotate(-90deg)
+            transition: 0.3s linear
+
+// FASHION COLLECTION SECTION DESIGN 
+.fashionCollection
+    padding: 112px 0
+
+.fashionCollection-row
+    @include flex(row, flex-start, center)
+    gap: 80px
+    @include media(930px)
+        @include flex(column, flex-start, flex-start)
+.fashionCollection-info
+    width: 50%
+    @include media(930px)
+        width: 100%
+    &__heading
+        @include font(600, 16px, 24px, #000)
+        margin-bottom: 16px
+    &__title
+        @include font(700, 48px, 57px, #000)
+        margin-bottom: 24px
+        @include media(530px)
+            @include font(700, 32px, 36px, #000)
+    &__desc
+        @include font(400, 18px, 27px, #000)
+        margin-bottom: 32px
+        @include media(413px)
+            @include font(400, 16px, 24px, #000)
+    &__btns
+        display: flex
+        align-items: center
+        gap: 24px
+        button
+            background: white
+            &:after,
+            &:before
+                background: #000
+            &:hover
+                color: #fff
+        a
+            @include flex(row, flex-start, center)
+            gap: 8px
+            &:hover
+                img
+                    transform: translateX(10px) rotate(-90deg)
+            img
+                transform: rotate(-90deg)
+.fashionCollection-list
+    @include flex(column, flex-start, flex-start)
+    gap: 16px
+    margin-bottom: 32px
+    &__item
+        @include flex(row, flex-start, center)
+        gap: 16px
+        &__item--img
+            display: flex
+            width: 16px
+            height: 16px
+            object-fit: contain
+        &__item--title
+            @include font(400, 16px, 24px, #000)
+
+.fashionCollection-imgs
+    position: relative
+    @include media(930px)
+        display: flex
+        justify-content: center
+    &__bg
+        position: absolute
+    &__main
+        position: relative
+        width: 100%
+        max-width: 616px
+        object-fit: contain
+        @include media(1400px)
+            max-width: 500px
+        @include media(1250px)
+            max-width: 400px
+        @include media(930px)
+            max-width: 500px
+            margin: 0 auto
+            
+.one
+    top: -42px
+    right: -42px
+    @include media(1050px)
+        display: none
+    @include media(930px)
+        display: inline-block
+    @include media(560px)
+        display: none
+.two
+    left: -42px
+    bottom: -42px
+    @include media(1050px)
+        display: none
+    @include media(930px)
+        display: inline-block
+    @include media(560px)
+        display: none
+
+// comment section design
+
+.comment
+    padding: 112px 0
+
+.comment-title
+    @include font(700, 48px, 57px, #000)
+    margin-bottom: 24px
+.comment-desc
+    @include font(400, 18px, 27px, #000)
+    margin-bottom: 80px
+.swiper-wrapper
+    display: flex !important
+    align-items: stretch !important
+.swiper-slide
+    height: auto !important
+.comment-slider
+    display: flex !important
+    flex-direction: column
+    height: auto !important
+    &__stars
+        @include flex(row, flex-start, center)
+        gap: 4px
+        margin-bottom: 32px
+    &__desc
+        @include font(700, 20px, 27px, #000)
+        margin-bottom: auto
+    &__avatar
+        display: flex
+        width: 56px
+        height: 56px
+        object-fit: contain
+        margin-top: 20px
+    &__name
+        @include font(600, 16px, 24px, #000)
+        margin-top: 16px
+    &__compane
+        @include font(400, 16px, 24px, #000)
+
+// DISCOUNT SECTION DESIGN 
+.discount
+    padding: 112px 0
+    position: relative
+    .container
+        display: flex
+        align-content: center
+        align-items: center
+        flex-direction: column
+.discount-blur
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 1
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%)
+.discount-bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+.discount-title
+    @include font(700, 48px, 57px, #fff)
+    margin-bottom: 24px
+    width: 100%
+    max-width: 768px
+    text-align: center
+    position: relative
+    z-index: 2
+.discount-desc
+    @include font(400, 18px, 27px, #fff)
+    margin-bottom: 24px
+    width: 100%
+    max-width: 768px
+    text-align: center
+    position: relative
+    z-index: 2
+.discount-btns
+    @include flex(row, flex-start, center)
+    gap: 16px
+    position: relative
+    z-index: 2
+    button
+        background: #000
+        @include font(400, 16px, 24px, #fff)
+        &:after,
+        &:before
+            background: #fff
+        &:hover
+            color: #000
+    a
+        height: 40px
+        padding: 0 12px
+        @include flex(row, center, center)
+        border: 1px solid #fff
+        @include font(400, 16px, 24px, #fff)
+        position: relative
+        &::before
+            position: absolute
+            content: ''
+            top: 0
+            left: 0
+            width: 0
+            height: 100%
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))
+            transition: 0.3s linear
+        &:hover::before
+            width: 100%
+            right: 0
+        &:hover
+            background: #000
+            color: #fff
+
+// BEST SELLERS SECTION DESIGN
+
+.bestSellers
+    padding: 112px 0
+    .container
+        position: relative
+
+.bestSellers-title
+    @include font(700, 48px, 57px, #000)
+    text-align: center
+    margin-bottom: 24px
+
+.bestSellers-desc
+    @include font(400, 18px, 27px, #000)
+    width: 100%
+    max-width: 768px
+    text-align: center
+    margin: 0 auto
+    margin-bottom: 80px
+.swiper
+    position: relative
+
+.bestSellers-nav
+    position: absolute
+    top: 60%
+    left: 25px
+    z-index: 1000
+    @include flex(row, space-between, center)
+    width: 100%
+    button
+        width: 56px
+        height: 56px
+        object-fit: contain
+        display: flex
+        z-index: 100 !important
+        position: relative
+        margin-left: -50px
+        background: #fff
+        border-radius: 100%
+        position: relative
+        &::before,
+        &::after
+            display: none !important
+
+    &__one
+        transform: rotate(-180deg)
+.bestSellers-slider
+    img
+        width: 100%
+        object-fit: contain
+
+.swiper-pagination-bullet-active
+    background: #000 !important

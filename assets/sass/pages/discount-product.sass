@@ -1,0 +1,87 @@
+.discountProduct
+    padding: 60px 0
+
+.discountProduct-header
+    width: 100%
+    @include flex(row, space-between, center)
+    padding-bottom: 40px
+
+    &__title
+        @include font(600, 32px, 32px, #111111)
+    &__btn
+        background: none
+        border: none
+        @include flex(row, flex-start, center)
+        gap: 6px
+
+.discountProduct-cards
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    column-gap: 30px
+    row-gap: 65px
+    @include media(1100px)
+        grid-template-columns: repeat(2, 1fr)
+    @include media(600px)
+        column-gap: 20px
+    @include media(500px)
+        grid-template-columns: repeat(1, 1fr)
+    
+.discountProduct-item   
+
+    &__img
+        position: relative
+        margin-bottom: 22px
+        height: 478px
+        @include media(600px)
+            height: 378px
+        @include media(500px)
+            height: 478px
+
+        img
+            display: flex
+            width: 100%
+            height: 100%
+            object-fit: cover
+            
+    &__present
+        width: 61px
+        height: 21px
+        position: absolute
+        left: 15px
+        bottom: 15px
+        background: #D61818
+        @include font(400, 14px, 14px, #fff)
+        @include flex(row, center, center)
+
+    &__name
+        @include font(400, 18px, 18px, #111111)
+        margin-bottom: 20px
+        &:hover
+            color: blue
+    &__price
+        @include flex(row, flex-start, center)
+        gap: 9px
+    &__price--discount
+        @include font(600, 20px, 20px, #111)
+    &__price--main
+        @include font(300, 20px, 20px, #767676)
+        text-decoration: line-through
+
+.discountProduct-seeing-product
+    margin: 65px 0
+    @include font(500, 17px, 23px, #808080)
+
+
+.discountProduct-pagination
+    @include  flex(row, center center)
+    margin: 0 auto
+    width: 100%
+    max-width: 150px
+    gap: 14px
+    &__item
+        background: none
+        width: 41px
+        height: 41px
+    img
+        cursor: pointer
+
