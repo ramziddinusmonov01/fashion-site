@@ -144,8 +144,6 @@
 
 // my orders
 
-.myOrder
-
 .profil-title
     @include font(700, 23px, 30px, #303030)
 
@@ -206,12 +204,122 @@
                     span
                         margin-left: 20px
 
-
             tr:last-child
                 font-weight: bold
                 font-size: 18px
 
-
             tr:last-child td
                 font-size: 20px
                 font-weight: bold
+
+// my adress
+
+.adress-cards
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 30px
+    @include media(680px)
+        grid-template-columns: repeat(1, 1fr)
+    &__item
+        border: 1px solid #E9EAEE
+        border-radius: 5px
+        padding: 80px 35px
+        position: relative
+    &__id
+        position: absolute
+        top: 0
+        left: 0
+        width: 80%
+        padding: 14px
+        @include flex(row, center, center)
+        background-color: #F8F8F8
+        border: 1px solid #E9EAEE
+
+    &__name
+        @include font(400, 19px, 23px, #121214)
+        margin-bottom: 24px
+
+    &__location
+        @include font(400, 15px, 25px, #3B3B3E)
+        margin-bottom: 14px
+    &__number
+        @include flex(column, flex-start, flex-stat)
+        @include font(400, 15px, 25px, #3B3B3E)
+        margin-bottom: 14px
+        span
+            @include font(400, 14px, 25px, #87878D)
+    &__email
+        @include flex(column, flex-start, flex-stat)
+        @include font(400, 15px, 25px, #3B3B3E)
+        margin-bottom: 14px
+        span
+            @include font(400, 14px, 25px, #87878D)
+    &__footer
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        padding: 14px 34px
+        @include flex(row, space-between, center)
+        gap: 9px
+        border-top: 1px solid #E9EAEE
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        a, button
+            @include font(400, 14px, 23px, #303030)
+            @include flex(row, flex-start, center)
+            gap: 9px
+            span
+                font-size: 20px
+        button
+            span
+                width: 15px
+                height: 15px
+                @include flex(row, center, center)
+                border: 1px solid #303030
+                border-radius: 50%
+
+.adress-addNew
+    width: 100%
+    border: 1px dashed #E9EAEE
+    @include flex(row, center, center)
+    margin-top: 30px
+    padding: 30px 0
+    gap: 17px
+    span
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        background: #251b1b
+        @include flex(row, center, center)
+
+// edit adres
+.editAdress-form
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 30px
+    @include media(630px)
+        grid-template-columns: repeat(1, 1fr)
+
+    &__item
+        @include flex(column, flex-start, flex-start)
+        gap: 7px
+        label
+            @include font(400, 15px, 25px, #707076)
+            cursor: pointer
+        input, select
+            background: #F9F9F9
+            border-radius: 5px
+            width: 100%
+            padding: 20px
+            outline: none
+            @include font(400, 20px, 22px, #111111)
+.editAdress-btn
+    @include flex(row, center, center)
+    @include font(400, 17px, 25px, #fff)
+    width: 242px
+    height: 47px
+    border-radius: 5px
+    background: #000
+    margin-top: 20px
+    margin-left: auto

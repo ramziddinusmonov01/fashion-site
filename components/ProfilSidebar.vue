@@ -50,7 +50,7 @@
       </svg>
       <p class="profil-sidebar__text">Мои заказы</p>
     </NuxtLink>
-    <NuxtLink to="/profil">
+    <NuxtLink to="/profil/my-adress">
       <svg
         width="17"
         height="24"
@@ -70,7 +70,7 @@
 
       <p class="profil-sidebar__text">Адреса</p>
     </NuxtLink>
-    <NuxtLink to="/profil">
+    <NuxtLink to="/profil/edit-adress">
       <svg
         width="19"
         height="20"
