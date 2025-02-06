@@ -10,7 +10,9 @@
         <div class="nav-modal" :class="{ 'active-modal': active_navModal }">
           <div class="nav-modal__header">
             <NuxtLink to="/">Logo</NuxtLink>
-            <button>X</button>
+            <button @click="active_navModal = false">
+              <Icon name="ic:round-close"/>
+            </button>
           </div>
           <div class="nav-modal__list">
             <NuxtLink class="nav__list-item" to="/">Главная</NuxtLink>

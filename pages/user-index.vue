@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <NuxtLink to="/" class="collection-btn">Открыть магазин</NuxtLink>
+        <NuxtLink to="/new-collection" class="collection-btn">Открыть магазин</NuxtLink>
       </div>
     </div>
     <!-- COLLECTION  END -->
@@ -155,17 +155,17 @@
     <div class="cards">
       <div class="container">
         <div class="cards-list">
-          <div  data-aos-delay="100"  data-aos="fade-up-right" class="cards-list__item cards-list__item--one">
+          <div   class="cards-list__item cards-list__item--one">
             <img src="~assets/images/png/user-cards-img-one.png" alt="image" />
             <h1 class="cards-list__item--title">Модные одежду на ваш вкус</h1>
             <p class="cards-list__item--text">Модные одежду на ваш вкус</p>
           </div>
-          <div  data-aos-delay="100" data-aos="zoom-in-down" class="cards-list__item cards-list__item--two">
+          <div   class="cards-list__item cards-list__item--two">
             <img src="~assets/images/png/user-cards-img-two.png" alt="image" />
             <h1 class="cards-list__item--title">Трендовые очки</h1>
             <p class="cards-list__item--text">Успейте пока в наличии</p>
           </div>
-          <div  data-aos-delay="100" data-aos="fade-up-left"  class="cards-list__item cards-list__item--three">
+          <div    class="cards-list__item cards-list__item--three">
             <img
               src="~assets/images/png/user-cards-img-three.png"
               alt="image"

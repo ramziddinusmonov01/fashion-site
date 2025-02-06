@@ -10,7 +10,9 @@
         <div class="nav-modal" :class="{ 'active-modal': active_navModal }">
           <div class="nav-modal__header">
             <NuxtLink to="/user-indexuser-index">Logo</NuxtLink>
-            <button>X</button>
+            <button @click="active_navModal = false">
+              <Icon name="mdi:window-close" />
+            </button>
           </div>
           <div class="nav-modal__list">
             <NuxtLink class="nav__list-item" to="/user-index">Главная</NuxtLink>

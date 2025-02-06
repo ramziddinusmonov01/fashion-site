@@ -11,6 +11,9 @@
     @include flex(row, justify-between, flex-start)
     padding-bottom: 80px
     border-bottom: 1px solid #fff
+    @include media(450px)
+        @include flex(column, flex-start, flex-start)
+        gap: 30px
 
 .footer-left
     margin-right: auto
@@ -53,9 +56,14 @@
 .footer-bottom
     padding-top: 32px
     @include flex(row, space-between, center)
+    @include media(620px)
+        @include flex(column, center, center)
+        gap: 30px
     &__links
         @include flex(row, flex-start, center)
         gap: 24px
+        @include media(420px)
+            gap: 10px
         a
             @include font(400, 14px, 21px, #fff)
             text-decoration: underline
