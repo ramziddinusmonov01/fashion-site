@@ -17,7 +17,7 @@
           </h2>
 
           <div class="adress-cards__footer">
-            <NuxtLink to="/">
+            <NuxtLink to="/profil/edit-adress">
               <span>
                 <Icon name="material-symbols:ink-pen" />
               </span>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-      <NuxtLink class="adress-addNew" to="/">
+      <NuxtLink class="adress-addNew" to="/profil/edit-adress">
         <button>
             <Icon name="gridicons:create" />
         </button>

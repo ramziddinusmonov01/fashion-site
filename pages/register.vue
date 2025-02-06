@@ -51,6 +51,7 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const name = ref("");
@@ -78,6 +79,9 @@ function createAccount() {
   });
   localStorage.setItem("registerUser", JSON.stringify(userInfo.value));
   sendTelegram()
+  router.push('/')
+  window.location.reload()
+
   }else{
     checkName.value = true
     checkNumber.value = true
@@ -118,8 +122,8 @@ const sendTelegram = async () => {
       name.value = '';
       phone.value = '';
       password.value = '';
-      window.location.reload()
-      router.push('/')
+    
+      
 
     } else {
       const errorData = await response.json();

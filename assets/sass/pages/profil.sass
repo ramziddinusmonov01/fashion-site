@@ -323,3 +323,71 @@
     background: #000
     margin-top: 20px
     margin-left: auto
+
+// change p[assword
+
+.change-password
+
+    &__form
+        @include flex(column, flex-start, flex-start)
+        gap: 30px
+    &__item
+        @include flex(column, flex-start, flex-start)
+        gap: 10px
+        width: 50%
+        position: relative
+        @include media(650px)
+            width: 100%
+        label
+            @include font(400, 13px, 22px, #3C3D44)
+        input
+            @include font(400, 19px, 22px, #424347)
+            padding: 14px 20px
+            background: #F9F9F9
+            border-radius: 5px
+            outline: none
+            letter-spacing: 3px
+            width: 100%
+        button
+            position: absolute
+            right: 20px
+            top: 40%
+            transform: translateY(50%)
+            font-size: 20px
+
+    &__btn
+        @include flex(row, center, center)
+        @include font(400, 17px, 25px, #fff)
+        width: 242px
+        height: 47px
+        border-radius: 5px
+        background: #000
+        margin-top: 20px
+        margin-right: auto
+
+// logout 
+
+.logout-card
+    width: 100%
+    max-width: 433px
+    background: #F9F9F9
+    border-radius: 5px
+    padding: 20px
+    text-align: center
+    &__text
+        @include font(400, 15px, 22px, #3C3D44)
+        margin-bottom: 65px
+    &__btns
+        @include flex(row, center, flex-start)
+        gap: 30px
+        button
+            width: 90px
+            height: 39px
+            @include flex(row, center, center)
+            border: 1px solid #000
+            border-radius: 5px
+            @include font(400, 15px, 22px, #111)
+            transition: 0.3s linear
+            &:hover
+                background: #000
+                color: #fff

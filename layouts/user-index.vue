@@ -3,6 +3,7 @@
         <UserNavBar/>
         <NuxtPage/>
         <MyFooter />
+        
     </div>
 </template>
 

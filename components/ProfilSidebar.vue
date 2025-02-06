@@ -94,7 +94,7 @@
 
       <p class="profil-sidebar__text">Редактировать адреса</p>
     </NuxtLink>
-    <NuxtLink to="/profil">
+    <NuxtLink to="/profil/change-password">
       <svg
         width="19"
         height="24"
@@ -110,10 +110,10 @@
 
       <p class="profil-sidebar__text">Пароль</p>
     </NuxtLink>
-    <button>
+    <NuxtLink to="/profil/logout">
       <img src="~/assets/images/svg/logout-profil.png" alt="" />
       <p class="profil-sidebar__text">Выход</p>
-    </button>
+    </NuxtLink>
   </div>
 </template>
 

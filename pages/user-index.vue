@@ -197,7 +197,7 @@
 
         <Swiper
           class="bestSellers-swiper"
-          :modules="modules"
+         
           :slides-per-view="1"
           :space-between="20"
           :loop="true"
